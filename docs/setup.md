@@ -207,3 +207,8 @@ echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> ~/.bashrc
 sudo apt install libomp-dev
 ```
 
+## Set panda URDF
+From the root of the project (G-MAPP dir):
+```bash
+echo "export panda_urdf=\"\$(pwd)/src/percept_core/src/perception/assets/panda/panda.urdf\"" >> ~/.bashrc
+```

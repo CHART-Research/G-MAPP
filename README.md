@@ -40,9 +40,7 @@ The installation instructions for each component can be found in [docs/setup.md]
 
 ## Running
 
-> Todo: add panda-py support package instructions
-
-> Todo: add running instructions
+Instructions for running can be found in [docs/run.md](docs/run.md)
 
 ## Citation
 If you found this work useful, please consider citing:
