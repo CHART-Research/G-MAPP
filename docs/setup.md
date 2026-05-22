@@ -150,7 +150,8 @@ We build Open3D-CUDA from source:
 ```bash
 sudo apt install -y git build-essential cmake libgeos-dev -y
 
-mkdir ~/userlibs/open3d
+mkdir ~/userlibs && mkdir ~/userlibs/open3d && mkdir ~/userlibs/open3d/open3d_install
+
 cd ~/userlibs/open3d
 
 git clone --recursive https://github.com/isl-org/Open3D
@@ -169,6 +170,7 @@ cmake \
 -DBUILD_GUI=OFF \
 -DCMAKE_BUILD_TYPE=Release \
 -DBUILD_PYTHON_MODULE=OFF \
+-DCMAKE_CXX_FLAGS="-Wno-error -Wno-maybe-uninitialized -Wno-array-bounds" \
 -DCMAKE_INSTALL_PREFIX=~/userlibs/open3d/open3d_install \
 ..
 ```

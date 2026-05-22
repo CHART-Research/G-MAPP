@@ -18,7 +18,7 @@
 | [Ubuntu](docs/setup.md#ubuntu-2404) | 24.04 | Base OS |
 | [Kernel](docs/setup.md#kernel-680) | 6.8.0 | |
 | [Librealsense](docs/setup.md#librealsense) | 2.56.5 | |
-| [ROS 2](docs/setup.md#ros-2-rolling) | Rolling | |
+| [ROS 2](docs/setup.md#ros-2) | Rolling | |
 | [NVIDIA Driver](docs/setup.md#nvidia-driver) | 535 | or greater |
 | [CUDA](docs/setup.md#cuda-126) | 12.6 | with compatibility pkg|
 | [Open3D](docs/setup.md#open3d-cuda) | | CUDA build |
