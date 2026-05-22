@@ -41,8 +41,8 @@ Note: the dynamic and static scene loaders read their data from temp files
 - Start/end goals: [src/experiments/src/oriented_pointmass/config/start_goal.yaml](../src/experiments/src/oriented_pointmass/config/start_goal.yaml)
 
 #### Launch oriented pointmass
-```
-ros2 launch experiments oriented_pointmass_launch.py
+```bash
+ros2 launch experiments sim_op.py
 ```
 
 ## Connection with physical robot
