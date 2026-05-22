@@ -27,21 +27,22 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   target_compile_options(gafro_ros2 PUBLIC -Wall -Wextra -Wpedantic -Werror)
 endif()
 
-ament_target_dependencies(gafro_ros2
-    PUBLIC
-        rclcpp
-        sackmesser_ros2
-        geometry_msgs
-        visualization_msgs
-        nav_msgs
-        gafro
-        urdf
-)
-
-target_include_directories(gafro_ros2 
+target_include_directories(gafro_ros2
     PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/src>
         $<INSTALL_INTERFACE:include/>
+)
+
+target_link_libraries(gafro_ros2
+    PUBLIC
+        rclcpp::rclcpp
+        sackmesser_ros2::sackmesser_ros2
+        ${geometry_msgs_TARGETS}
+        ${visualization_msgs_TARGETS}
+        ${nav_msgs_TARGETS}
+        urdf::urdf
+        gafro::gafro
+        gafro_robot_descriptions::gafro_robot_descriptions
 )
 
 ament_export_targets(gafro_ros2-config-targets HAS_LIBRARY_TARGET)
@@ -53,12 +54,6 @@ ament_export_dependencies(
     visualization_msgs
     nav_msgs
     urdf
-)
-
-target_link_libraries(gafro_ros2
-    PUBLIC
-        gafro::gafro
-        gafro_robot_descriptions::gafro_robot_descriptions
 )
 
 install(

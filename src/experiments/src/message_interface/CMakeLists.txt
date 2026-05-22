@@ -25,10 +25,10 @@ target_include_directories(message_interface
 target_link_libraries(message_interface
   PUBLIC
     sackmesser_ros2::sackmesser_ros2
+    gafro_ros2::gafro_ros2
     gafro::gafro
     ga_circular_fields_planner::ga_circular_fields_planner
+    ${percept_interfaces_TARGETS}
 )
-
-ament_target_dependencies(message_interface PUBLIC percept_interfaces gafro_ros2 sackmesser_ros2)
 
 install(TARGETS message_interface DESTINATION lib/${PROJECT_NAME})

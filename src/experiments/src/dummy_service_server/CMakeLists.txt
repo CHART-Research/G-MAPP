@@ -2,18 +2,14 @@ add_executable(dummy_service_server dummy_service_server.cpp)
 
 target_compile_options(dummy_service_server PUBLIC -Wall -Wextra -Wpedantic -Werror)
 
-ament_target_dependencies(dummy_service_server
+target_link_libraries(dummy_service_server
   PUBLIC
-    sackmesser_ros2
+    sackmesser_ros2::sackmesser_ros2
+    message_interface
 )
 
 ament_export_dependencies(
   sackmesser_ros2
-)
-
-target_link_libraries(dummy_service_server
-  PUBLIC
-    message_interface
 )
 
 install(

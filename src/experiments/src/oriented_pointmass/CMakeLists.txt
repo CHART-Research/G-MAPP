@@ -8,22 +8,18 @@ add_executable(oriented_pointmass oriented_pointmass.cpp)
 
 target_compile_options(oriented_pointmass PUBLIC -Wall -Wextra -Wpedantic -Werror)
 
-ament_target_dependencies(oriented_pointmass
+target_link_libraries(oriented_pointmass
   PUBLIC
-    sackmesser_ros2
-    gafro_ros2
+    sackmesser_ros2::sackmesser_ros2
+    gafro_ros2::gafro_ros2
+    ga_circular_fields_planner::ga_circular_fields_planner
+    ${YAML_CPP_LIBRARIES}
+    message_interface
 )
 
 ament_export_dependencies(
   sackmesser_ros2
   gafro_ros2
-)
-
-target_link_libraries(oriented_pointmass
-  PUBLIC
-    ga_circular_fields_planner::ga_circular_fields_planner
-    ${YAML_CPP_LIBRARIES}
-    message_interface
 )
 
 install(
@@ -37,13 +33,10 @@ install(
   FILES
     config/oriented_pointmass_config.yaml
     config/start_goal.yaml
-
-		launch/oriented_pointmass_launch.py
+    launch/oriented_pointmass_launch.py
     launch/oriented_pointmass_launch_headless.py
     launch/sim_op.py
-
-		rviz2/oriented_pointmass.rviz
-
-		DESTINATION 
+    rviz2/oriented_pointmass.rviz
+  DESTINATION 
     share/${PROJECT_NAME}/oriented_pointmass/
 )

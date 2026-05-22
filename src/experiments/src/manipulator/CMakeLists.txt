@@ -8,22 +8,18 @@ add_executable(manipulator manipulator.cpp)
 
 target_compile_options(manipulator PUBLIC -Wall -Wextra -Wpedantic -Werror)
 
-ament_target_dependencies(manipulator
+target_link_libraries(manipulator
   PUBLIC
-    sackmesser_ros2
-    gafro_ros2
+    sackmesser_ros2::sackmesser_ros2
+    gafro_ros2::gafro_ros2
+    ga_circular_fields_planner::ga_circular_fields_planner
+    ${YAML_CPP_LIBRARIES}
+    message_interface
 )
 
 ament_export_dependencies(
   sackmesser_ros2
   gafro_ros2
-)
-
-target_link_libraries(manipulator
-  PUBLIC
-    ga_circular_fields_planner::ga_circular_fields_planner
-    ${YAML_CPP_LIBRARIES}
-    message_interface
 )
 
 install(
@@ -39,7 +35,6 @@ install(
     launch/manipulator_launch.py
     launch/rwe.py
     launch/sim_manip.py
-    
     manipulator_config.yaml
     start_configuration.yaml
   DESTINATION 
