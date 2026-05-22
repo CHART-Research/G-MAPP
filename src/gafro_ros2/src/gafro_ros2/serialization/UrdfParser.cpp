@@ -201,6 +201,7 @@ namespace gafro_ros
 
                     break;
                 }
+                default: break;
                 }
             }
         }
