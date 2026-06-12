@@ -1,9 +1,9 @@
 # G-MAPP: GPU-accelerated Multi-Agent Planning  and Perception for Reactive Motion Generation
 
-<!-- [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) -->
-![Version](https://img.shields.io/badge/version-v2.0--beta-blue)
-[![arXiv](https://img.shields.io/badge/arXiv-xxx.xxx-xxx.svg)](https://arxiv.org/abs/xxx.xxx)
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Version](https://img.shields.io/badge/version-v1.0--beta-green)
+[![arXiv](https://img.shields.io/badge/arXiv-2606.12579-b31b1b.svg)](https://arxiv.org/abs/2606.12579)
+[![Project Website](https://img.shields.io/badge/Project-Website-blue.svg)](https://chart-research.github.io/g-mapp)
 
 <p align="center">
   <img src="img/fig_fw_overview.png" alt="Banner" width="800"/>
@@ -47,14 +47,13 @@ If you found this work useful, please consider citing:
 
 ```bibtex
 @article{bishnoi2026gmapp,
-  author={Bishnoi, Tanmay and Laha, Riddhiman and Loẅ, Tobias and Chandy, Jose Alex and Figueredo, Luis F.C. and Haddadin, Sami},
+  author={Bishnoi, Tanmay and Laha, Riddhiman and Löw, Tobias and Chandy, Jose Alex and Figueredo, Luis F. C. and Haddadin, Sami},
   journal={IEEE Robotics and Automation Letters}, 
-  title={G-MAPP: GPU-accelerated Multi-Agent Planning and Perception for Reactive Motion Generation}, 
+  title={G-MAPP: GPU-Accelerated Multi-Agent Planning and Perception for Reactive Motion Generation}, 
   year={2026},
-  volume={},
-  number={},
-  pages={},
-  doi={},
-  publisher={IEEE}
+  volume={11},
+  number={6},
+  pages={7516-7523},
+  doi={10.1109/LRA.2026.3678839}
 }
 ```
