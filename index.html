@@ -26,6 +26,7 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script defer src="./static/js/simulations.js"></script>
 </head>
 <body>
 
@@ -164,6 +165,28 @@
     <!--/ Abstract. -->
 </section>
 
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Simulations</h2>
+
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <div class="buttons is-centered" id="sim-selector">
+          <button class="button is-rounded is-info sim-btn is-active" data-sim="bookshelf">
+            Bookshelf
+          </button>
+          <!-- add more buttons here later, e.g.: -->
+          <!-- <button class="button is-rounded sim-btn" data-sim="sim2">Dynamic Scene</button> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered" id="sim-videos">
+      <!-- filled in by simulations.js -->
+    </div>
+  </div>
+</section>
 
 
 <section class="section">
