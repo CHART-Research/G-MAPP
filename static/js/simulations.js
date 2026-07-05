@@ -19,7 +19,28 @@ const simData = {
       caption: 'MULTI (Ours)'
     },
   ],
-  // sim2: [ ... ],
+  complex: [
+    {
+      webm: './static/videos/sim/complex/apf_label.webm',
+      mp4: './static/videos/sim/complex/apf_label.mp4',
+      poster: './static/videos/sim/complex/apf_label.jpg',
+      caption: 'Artificial Potential Fields (APF)'
+    },
+    {
+      webm: './static/videos/sim/complex/mfi_label.webm',
+      mp4: './static/videos/sim/complex/mfi_label.mp4',
+      poster: './static/videos/sim/complex/mfi_label.jpg',
+      caption: 'Magnetic Fields Inspired'
+    },
+    {
+      webm: './static/videos/sim/complex/multi_label.webm',
+      mp4: './static/videos/sim/complex/multi_label.mp4',
+      poster: './static/videos/sim/complex/multi_label.jpg',
+      caption: 'MULTI (Ours)'
+    },
+  ],
+  
+
 };
 
 function renderSim(key) {
@@ -54,5 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSim(btn.dataset.sim);
   });
 
+  renderSim('complex');
   renderSim('bookshelf');
 });
