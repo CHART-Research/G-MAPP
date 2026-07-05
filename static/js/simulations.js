@@ -75,6 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSim(btn.dataset.sim);
   });
 
-  renderSim('complex');
-  renderSim('bookshelf');
+  const defaultBtn = document.querySelector('.sim-btn.is-active') || document.querySelector('.sim-btn');
+  renderSim(defaultBtn.dataset.sim);
 });
