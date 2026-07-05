@@ -1,52 +1,62 @@
 const simData = {
-  bookshelf: [
-    {
-      webm: './static/videos/sim/bookshelf/apf_label.webm',
-      mp4: './static/videos/sim/bookshelf/apf_label.mp4',
-      poster: './static/videos/sim/bookshelf/apf_label.jpg',
-      caption: 'Artificial Potential Fields (APF)'
-    },
-    {
-      webm: './static/videos/sim/bookshelf/mfi_label.webm',
-      mp4: './static/videos/sim/bookshelf/mfi_label.mp4',
-      poster: './static/videos/sim/bookshelf/mfi_label.jpg',
-      caption: 'Magnetic Fields Inspired'
-    },
-    {
-      webm: './static/videos/sim/bookshelf/multi_label.webm',
-      mp4: './static/videos/sim/bookshelf/multi_label.mp4',
-      poster: './static/videos/sim/bookshelf/multi_label.jpg',
-      caption: 'MULTI (Ours)'
-    },
-  ],
-  complex: [
-    {
-      webm: './static/videos/sim/complex/apf_label.webm',
-      mp4: './static/videos/sim/complex/apf_label.mp4',
-      poster: './static/videos/sim/complex/apf_label.jpg',
-      caption: 'Artificial Potential Fields (APF)'
-    },
-    {
-      webm: './static/videos/sim/complex/mfi_label.webm',
-      mp4: './static/videos/sim/complex/mfi_label.mp4',
-      poster: './static/videos/sim/complex/mfi_label.jpg',
-      caption: 'Magnetic Fields Inspired'
-    },
-    {
-      webm: './static/videos/sim/complex/multi_label.webm',
-      mp4: './static/videos/sim/complex/multi_label.mp4',
-      poster: './static/videos/sim/complex/multi_label.jpg',
-      caption: 'MULTI (Ours)'
-    },
-  ],
-  
-
+  bookshelf: {
+    description: 'A bookshelf scene testing fine-grained obstacle avoidance in a static, densely packed environment with local minima. N<sub>o</sub>= 65,084 obstacles',
+    videos: [
+      {
+        webm: './static/videos/sim/bookshelf/apf_label.webm',
+        mp4: './static/videos/sim/bookshelf/apf_label.mp4',
+        poster: './static/videos/sim/bookshelf/apf_label.jpg',
+        caption: 'Artificial Potential Field (APF) agents struggle with a classic local-minimum problem.'
+      },
+      {
+        webm: './static/videos/sim/bookshelf/mfi_label.webm',
+        mp4: './static/videos/sim/bookshelf/mfi_label.mp4',
+        poster: './static/videos/sim/bookshelf/mfi_label.jpg',
+        caption: 'Magnetic Fields Inspired (MFI) agents struggle with goal convergence on targets behind densely packed walls.'
+      },
+      {
+        webm: './static/videos/sim/bookshelf/multi_label.webm',
+        mp4: './static/videos/sim/bookshelf/multi_label.mp4',
+        poster: './static/videos/sim/bookshelf/multi_label.jpg',
+        caption: 'G-MAPP (Ours) can switch between agents to achieve faster convergence by parallelizing planning across high-fidelity environments.'
+      },
+    ]
+  },
+  complex: {
+    description: 'A larger, more topologically complex scene evaluating planner robustness in the presence of narrow passages and fast-moving obstacles. N<sub>o</sub>= 116,216 obstacles',
+    videos: [
+      {
+        webm: './static/videos/sim/complex/apf_label.webm',
+        mp4: './static/videos/sim/complex/apf_label.mp4',
+        poster: './static/videos/sim/complex/apf_label.jpg',
+        caption: 'Artificial Potential Field (APF) agents can hit robot joint limits or be easily perturbed by moving objects in the environment.'
+      },
+      {
+        webm: './static/videos/sim/complex/mfi_label.webm',
+        mp4: './static/videos/sim/complex/mfi_label.mp4',
+        poster: './static/videos/sim/complex/mfi_label.jpg',
+        caption: 'Magnetic Fields Inspired (MFI) agents can ignore obstacle motion orthogonal to the velocity of the control point, resulting in unexpected collisions.'
+      },
+      {
+        webm: './static/videos/sim/complex/multi_label.webm',
+        mp4: './static/videos/sim/complex/multi_label.mp4',
+        poster: './static/videos/sim/complex/multi_label.jpg',
+        caption: 'G-MAPP (Ours) uses an ensemble of agents to switch between broad-phase and narrow-phase control modes to achieve safe motion in dynamic, cluttered scenes.'
+      },
+    ]
+  },
 };
 
 function renderSim(key) {
+  const sim = simData[key];
+
+  const descEl = document.getElementById('sim-description');
+  // descEl.textContent = sim.description;
+  descEl.innerHTML = sim.description;
+
   const container = document.getElementById('sim-videos');
   container.innerHTML = '';
-  simData[key].forEach((v, i) => {
+  sim.videos.forEach((v, i) => {
     const col = document.createElement('div');
     col.className = 'column';
     col.innerHTML = `
@@ -61,6 +71,7 @@ function renderSim(key) {
         <source src="${v.webm}" type="video/webm">
         <source src="${v.mp4}" type="video/mp4">
       </video>
+      <p class="has-text-centered mt-2">${v.caption}</p>
     `;
     container.appendChild(col);
   });
