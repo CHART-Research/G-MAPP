@@ -29,7 +29,7 @@ const simData = {
         webm: './static/videos/sim/complex/apf_label.webm',
         mp4: './static/videos/sim/complex/apf_label.mp4',
         poster: './static/videos/sim/complex/apf_label.jpg',
-        caption: 'Artificial Potential Field (APF) agents can hit robot joint limits or be easily perturbed by moving objects in the environment.'
+        caption: 'Artificial Potential Field (APF) agents can easily hit robot joint limits or be perturbed by moving objects in the environment.'
       },
       {
         webm: './static/videos/sim/complex/mfi_label.webm',
